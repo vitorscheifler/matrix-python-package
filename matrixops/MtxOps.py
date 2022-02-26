@@ -1,4 +1,7 @@
 from random import random
+from itertools import starmap
+from operator import mul
+
 
 class Matrix:
 
@@ -82,3 +85,18 @@ class Matrix:
         return result.data
 
     def __mul__(self, other):
+
+        if self.n != other.m:
+            raise ValueError("The number of columns of the first matrix is different of the number of rows of the second.")
+
+        result = Matrix()
+
+        zip_b = list(zip(*other.data))
+
+        result.m = self.m
+        result.n = other.n
+
+        result.data = [[sum(ele_a*ele_b for ele_a, ele_b in zip(row_a, col_b))
+                    for col_b in zip_b] for row_a in self.data]
+
+        return result.data
