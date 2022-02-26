@@ -3,9 +3,9 @@
 I made a python package to do some matrix algebra. This project has educational purpose and it was made to practice Object-Oriented Programming.
 
 ## Table of Content
-* [General Info](general-info)
-* [Technologies](technologies)
-* [Acknowledgements](acknowlegements)
+* [General Info](#general-info)
+* [Technologies](#technologies)
+* [Acknowledgements](#acknowlegements)
 
 ## General Info
 Here, I made a package to make addition, subtraction, multiplication and also transpose matrices without using numpy.
