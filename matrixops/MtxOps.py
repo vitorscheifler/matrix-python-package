@@ -65,3 +65,20 @@ class Matrix:
         result.m = self.m
         result.n = self.n
         return result.data
+
+    def __sub__(self, other):
+
+        result = Matrix()
+
+        if self.shape() != other.shape():
+            raise ValueError("The matrices have different orders!")
+
+        negative_other = [[-1* i for i in t] for t in other.data]
+
+        result.data = [list(map(sum, zip(*t)))
+                       for t in zip(self.data, negative_other)]
+        result.m = self.m
+        result.n = self.n
+        return result.data
+
+    def __mul__(self, other):
